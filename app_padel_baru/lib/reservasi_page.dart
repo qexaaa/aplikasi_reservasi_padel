@@ -110,10 +110,9 @@ class _ReservasiPageState extends State<ReservasiPage> {
     }
   }
 
-  // ================================
   // SIMPAN RESERVASI
-  // ================================
   Future<void> simpanReservasi() async {
+    // AMBIL EMAIL USER (TIDAK BOLEH DIHAPUS)
     final prefs = await SharedPreferences.getInstance();
     final email = prefs.getString('email');
 
@@ -128,8 +127,23 @@ class _ReservasiPageState extends State<ReservasiPage> {
       return;
     }
 
+    // VALIDASI TANGGAL
+    final jadwalDate = DateTime.parse(selectedJadwal!['tanggal']);
+    final now = DateTime.now();
+    final todayOnly = DateTime(now.year, now.month, now.day);
+
+    if (jadwalDate.isBefore(todayOnly)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Tidak bisa reservasi pada tanggal yang sudah lewat'),
+        ),
+      );
+      return;
+    }
+
     setState(() => isLoading = true);
 
+    // PROSES SIMPAN KE API
     try {
       final response = await dio.post(
         'https://app.padel.baru.larathing.my.id/reservasi/create.php',

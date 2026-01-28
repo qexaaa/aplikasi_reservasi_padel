@@ -114,11 +114,14 @@ class _KelolaJadwalPageState extends State<KelolaJadwalPage> {
   }
 
   // Menghapus jadwal berdasarkan ID
-  Future<void> deleteJadwal(String id) async {
+  Future<void> deleteJadwal(Map j) async {
     try {
       final res = await dio.post(
         "https://app.padel.baru.larathing.my.id/jadwal/delete.php",
-        data: {"id": id},
+        data: {
+          "id": j['id'].toString(),
+          "lapangan_id": j['lapangan_id'].toString(),
+        },
         options: Options(
           contentType: Headers.formUrlEncodedContentType,
         ),
@@ -364,7 +367,7 @@ class _KelolaJadwalPageState extends State<KelolaJadwalPage> {
                 icon: const Icon(Icons.delete,
                     color: Colors.red),
                 onPressed: () =>
-                    deleteJadwal(j['id'].toString()),
+                    deleteJadwal(j),
               ),
             ),
           );
