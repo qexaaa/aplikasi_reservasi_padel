@@ -31,25 +31,6 @@ Aplikasi ini dibuat sebagai **Proyek Akhir / Ujian Akhir Semester (UAS)** mata k
 
 ---
 
-## 📂 Struktur Repository
-aplikasi_reservasi_padel
-│
-├── app_padel_baru
-│ └── Source code aplikasi mobile Flutter
-│
-├── API
-│ └── Source code backend (PHP REST API)
-│
-├── Database
-│ └── File database (.sql)
-│
-├── Dokumentasi Aplikasi - Muhammad Saoki Ramada
-│ └── Laporan dan dokumentasi aplikasi (PDF)
-│
-├── README.md
-├── LICENSE
-└── .gitignore
-
 🌐 API Backend
 
 API backend sudah dihosting dan digunakan oleh aplikasi mobile.
