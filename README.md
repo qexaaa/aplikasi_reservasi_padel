@@ -40,8 +40,11 @@ Source code API tersedia di folder API untuk keperluan dokumentasi dan penilaian
 
 File database tersedia dalam format .sql pada folder Database dan digunakan sebagai basis data aplikasi reservasi.
 
-👤 Identitas Pengembang
+👤 Author
 
 Nama : Muhammad Saoki Ramada
+Prodi : Teknologi Informasi
 Mata Kuliah : Mobile Computing
 Jenis Proyek : Proyek Akhir / UAS
+Tahun : 2026
+GitHub: https://github.com/qexaaa
